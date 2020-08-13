@@ -1,0 +1,38 @@
+
+
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title #{product.product_name}
+  // Fonts
+  link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet')
+  // CSS
+  link(href='/stylesheets/product/product.css' rel='stylesheet')
+  meta(name='robots' content='noindex,follow')
+main.container
+  // Left Column / Headphones Image
+  .left-column
+    img(data-image='black' src=`${product.picture}` alt='')
+    img(data-image='blue' src=`${product.picture}` alt='')
+    img.active(data-image='red' src=`${product.picture}` alt='')
+  // Right Column
+  .right-column
+    // Product Description
+    .product-description
+      
+      h1 #{product.product_name}
+      p
+        | #{product.characteristics}
+    // Product Configuration
+    .product-configuration
+      // Product Color
+      
+    // Product Pricing
+    .product-price
+      span #{product.selling_price}
+      form(id='add', action="/card/add", method="post")
+        input(type="hidden", name = "id", value = `${product._id}`)
+        button.cart-btn(type="submit") Добавить товар
+// Scripts
+

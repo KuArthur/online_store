@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  #menu
+    div
+      a(href='#') Каталог
+
+  #content
+    p
+      each product in products
+        ul.products.clearfix
+          li.product-wrapper
+            a.btn-product(href="/product/" + `${product._id}`) #{product.product_name}
+            if (user && user.status == "Seller")
+              a.button(href="/product/" + `${product._id}` + "/edit?allow=true") Редактировать
+            .product-photo
+              img(src=`${product.picture}`, alt="picture")
+            p.price #{product.selling_price}
+            form(id='add', action="/card/add", method="post")
+                input(type="hidden", name = "id", value = `${product._id}`)
+                button.button-cart(type="submit") В корзину
+                  
+            
+              
+          

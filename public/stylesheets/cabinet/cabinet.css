@@ -1,0 +1,173 @@
+#signup {
+  width: 600px;
+  height: 540px;
+  margin: 100px auto 50px 50px;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+  background: #fff url(data:image/png;base64,iVBORw0K[...]CYII=);
+  border: 1px solid #ccc;
+  border-radius: 3px;  
+  float:left;
+  margin-left: 2em;
+  
+}
+
+#signup::before, 
+#signup::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 2px;
+  right: 2px;
+  top: 0;
+  z-index: -1;
+  background: #fff;
+  border: 1px solid #ccc;         
+}
+
+#signup::after {
+  left: 4px;
+  right: 4px;
+  bottom: -5px;
+  z-index: -2;
+  box-shadow: 0 8px 8px -5px rgba(0,0,0,.3);
+}
+
+::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+:-moz-placeholder {
+  color: #bbb;
+}                       
+
+.placeholder{
+   color: #bbb; /* polyfill */
+}       
+
+#signup input{
+   margin: 5px 0;
+   padding: 7px;
+   width: 40%;
+   *width: 518px; /* IE7 and below */
+   box-sizing: border-box;
+   border: 1px solid #ccc;
+   border-radius: 3px; 
+   margin-right: 0.5em;
+}
+
+#signup input:focus{
+       outline: 0;
+       border-color: #aaa;
+   box-shadow: 0 2px 1px rgba(0, 0, 0, .3) inset;
+}       
+
+#signup button{
+   margin: 20px 0 0 0;
+   padding: 15px 8px;          
+   width: 100%;
+   cursor: pointer;
+   border: 1px solid #2493FF;
+   overflow: visible;
+   display: inline-block;
+   color: #fff;
+   font: bold 1.4em arial, helvetica;
+   text-shadow: 0 -1px 0 rgba(0,0,0,.4);         
+   background-color: #0a4d8f;
+   background-image: linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,0)); 
+   transition: background-color .2s ease-out;
+   border-radius: 3px;
+   box-shadow: 0 2px 1px rgba(0, 0, 0, .3),
+               0 1px 0 rgba(255, 255, 255, .5) inset;                               
+}
+
+#signup button:hover{
+   background-color: #00376d;
+       border-color: #2b6399;
+}
+
+#signup button:active{
+   position: relative;
+   top: 3px;
+   text-shadow: none;
+   box-shadow: 0 1px 0 rgba(1, 8, 65, 0.3) inset;
+}
+
+.order {
+  width: 600px;
+  margin: 100px 50px 50px auto;
+  position: relative;
+  border-radius: 3px;  
+  float: right;  
+}
+
+.order__item {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+#order::before, 
+#order::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 2px;
+  right: 2px;
+  top: 0;
+  z-index: -1;
+  background: #fff;
+  border: 1px solid #ccc;         
+}
+
+#order::after {
+  left: 4px;
+  right: 4px;
+  bottom: -5px;
+  z-index: -2;
+  box-shadow: 0 8px 8px -5px rgba(0,0,0,.3);
+}
+
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.row:first-child {
+  font-weight: bold;
+}
+
+.row:nth-child(2n) {
+  background: #eee;
+}
+
+.cell {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-basis: 150px;
+  margin: 0;
+}
+
+.cell_no-limit {
+  overflow: visible;
+}
+
+
+
+.personal {
+  display:block;
+  float: left;
+  
+
+}
+
+.address {
+  display:block;
+  
+  
+  
+}
+

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+  link(rel='stylesheet', href='/stylesheets/auth/auth.css')
+  form(id="signin" action="/auth/login", method="post")
+      input#email(type="text", name="username", placeholder="email")
+      input#password(type="password", name="password", placeholder="Пароль")
+      button(type="submit") Войти
+

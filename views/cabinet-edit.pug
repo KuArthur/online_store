@@ -1,0 +1,20 @@
+link(rel='stylesheet', href='/stylesheets/cabinet/cabinet.css')
+form(id='signup', action="/cabinet/edit", method="post")
+    h3 Личные данные
+    div.personal
+        input(type="hidden", value = `${user._id}`, name = 'id')
+        input#email(type="text", name="username", placeholder="email" value= `${user.email}`) 
+        input#name(type="text", name="name", placeholder="Имя" value= `${user.name}` )
+        input#last_name(type="text", name="last_name", placeholder="Отчество" value= `${user.last_name}` )
+        input#surname(type="text", name="surname", placeholder="Фамилия" value= `${user.surname}` )
+        input#phone(type="tel", name="phone", placeholder="Телефон" value= `${user.phone}` )
+        input#date(type="date", name="birthday", placeholder="Дата рождения" value= `${user.birthday}` )
+    h3 Адрес 
+    div.address     
+        input#region(type="text", name="region", placeholder="Страна" value= `${user.address.region}` )
+        input#city(type="text", name="city", placeholder="Город" value= `${user.address.city}` )
+        input#street(type="text", name="street", placeholder="Улица" value= `${user.address.street}` )
+        input#house(type="text", name="house", placeholder="Дом" value= `${user.address.house}`)
+        input#apartment(type="text", name="apartment", placeholder="Квартира" value= `${user.address.apartment}` )
+        input#zip(type="number", name="zip", placeholder="Индекс" value= `${user.zip}` )
+        button(type="submit") Сохранить изменения

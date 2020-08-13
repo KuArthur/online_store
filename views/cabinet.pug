@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/cabinet/cabinet.css')
+    div(id = "signup")
+        a(href="/cabinet/" + `${user._id}` + "/edit?allow=true") Редактировать профиль
+        br
+        div.data
+            h3 Личные данные
+            div.personal
+                input#email(type="text", name="username", placeholder="email" value= `${user.email}` readonly) 
+                input#name(type="text", name="name", placeholder="Имя" value= `${user.name}` readonly)
+                input#last_name(type="text", name="last_name", placeholder="Отчество" value= `${user.last_name}` readonly)
+                input#surname(type="text", name="surname", placeholder="Фамилия" value= `${user.surname}` readonly)
+                input#phone(type="tel", name="phone", placeholder="Телефон" value= `${user.phone}` readonly)
+                input#date(type="text", name="birthday", placeholder="Дата рождения" value=moment(user.birthday).format('DD.MM.YYYY') readonly)
+
+            h3 Адрес 
+            div.address 
+                input#region(type="text", name="region", placeholder="Страна" value= `${user.address.region}` readonly)
+                input#city(type="text", name="city", placeholder="Город" value= `${user.address.city}` readonly)
+                input#street(type="text", name="street", placeholder="Улица" value= `${user.address.street}` readonly)
+                input#house(type="text", name="house", placeholder="Дом" value= `${user.address.house}`)
+                input#apartment(type="text", name="apartment", placeholder="Квартира" value= `${user.address.apartment}` readonly)
+                input#zip(type="number", name="zip", placeholder="Индекс" value= `${user.address.zip}` readonly)
+
+    if (orders)
+        div.order
+            h2 Заказы
+            .order__item
+                .row                      
+                    p.cell Название
+                    p.cell Количество
+                    p.cell Цена
+                each order in orders   
+                    each item in order.products
+                        .row                  
+                            p.cell=item.product.product_name
+                            p.cell=item.count
+                            p.cell=item.product.selling_price
+                    .row
+                        .cell.cell_no-limit Общая стоимость #{order.totalCost}
+                        .cell=moment(order.date).format('DD.MM.YYYY')
+
+    if (sellerOrders)
+        div.order
+            h2 Заказы
+                each user in sellerOrders
+                    h3 Покупатель #{user._id}
+                    each order in user.orders    
+                        .order__item
+                            .row
+                                p.cell Название
+                                p.cell Количество
+                                p.cell Цена
+                            each item in order.products
+                                .row
+                                    p.cell=item.product.product_name
+                                    p.cell=item.count
+                                    p.cell=item.product.selling_price
+                            .row
+                                .cell.cell_no-limit Общая стоимость #{order.totalCost}
+                                .cell=moment(order.date).format('DD.MM.YYYY')

@@ -1,0 +1,35 @@
+head
+meta(charset='utf-8')
+meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+meta(name='robots' content='noindex,follow')
+link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet')
+link(rel='stylesheet', href='/stylesheets/cart/cart.css')
+link(rel='stylesheet', href='/stylesheets/product/product.css')
+script(src='https://kit.fontawesome.com/a78df8155a.js' crossorigin='anonymous')
+
+#head
+  h1 Фототехника
+  form(action="/search" method="GET")
+    input.search(type="text" name="query" value=placeholder)
+    button.button-search(type="submit")
+      i.fas.fa-search
+  div(align='right')
+    if (!user)
+        a(href="/reg", class ='btn_reg') Регистрация
+        a(href='/auth/login', class = 'btn_auth') Войти
+        a(href='/card', class = 'btn_out')
+          i.fas.fa-shopping-cart
+    else if (user.status =="Seller")
+        a(href='/auth/logout', class = 'btn_out') Выйти
+        a(href='/product/add', class = 'btn_auth') Добавить товар
+        //a(href='/orders', class = 'btn_auth') Заказы
+        a(href='/cabinet', class = 'btn_auth') Личный кабинет
+        a(href='/card', class = 'btn_out')
+          i.fas.fa-shopping-cart
+    else
+        a(href='/auth/logout', class = 'btn_out') Выйти
+        a(href='/cabinet', class = 'btn_auth') Личный кабинет
+        a(href='/card', class = 'btn_out')
+          i.fas.fa-shopping-cart
+  
+  p#quote(align='right')

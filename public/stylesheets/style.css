@@ -1,0 +1,38 @@
+.btn_reg {
+  display: block; /* Строчно-блочный элемент */
+  background: rgb(1, 46, 85); /* Серый цвет фона */
+  color: #fff; /* Белый цвет текста */
+  padding: 1rem 1.5rem; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  border-radius: 3px; /* Скругляем уголки */
+  
+  box-sizing: border-box;
+  
+ }
+
+ .btn_auth {
+  display: block; /* Строчно-блочный элемент */
+  background: rgb(1, 46, 85); /* Серый цвет фона */
+  color: #fff; /* Белый цвет текста */
+  padding: 1rem 1.5rem; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  border-radius: 3px; /* Скругляем уголки */
+  
+  box-sizing: border-box;
+  
+  
+ }
+
+ .btn_out {
+  display: block; /* Строчно-блочный элемент */
+  background: rgb(1, 46, 85); /* Серый цвет фона */
+  color: #fff; /* Белый цвет текста */
+  padding: 1rem 1.5rem; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  border-radius: 3px; /* Скругляем уголки */
+  
+  box-sizing: border-box;
+ }
+
+
+

@@ -1,0 +1,21 @@
+extends layout
+block content
+
+    link(rel='stylesheet', href='/stylesheets/reg/reg.css')
+    h2 регистрация
+    form( id= 'signup', method='POST', action='/reg')
+        input#email(type="text", name="username", placeholder="email")
+        input#password(type="password", name="password", placeholder="Пароль")
+        input#name(type="text", name="name", placeholder="Имя")
+        input#last_name(type="text", name="last_name", placeholder="Отчество")
+        input#surname(type="text", name="surname", placeholder="Фамилия")
+        input#phone(type="tel", name="phone", placeholder="Телефон")
+        input#region(type="text", name="region", placeholder="Страна")
+        input#city(type="text", name="city", placeholder="Город")
+        input#street(type="text", name="street", placeholder="Улица")
+        input#house(type="text", name="house", placeholder="Дом")
+        input#apartment(type="text", name="apartment", placeholder="Квартира")
+        input#zip(type="number", name="zip", placeholder="Индекс")
+        input#date(type="date", name="birthday", placeholder="Дата рождения")
+        button(type="submit") Зарегистрироваться
+            

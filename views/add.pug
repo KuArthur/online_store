@@ -1,0 +1,12 @@
+form(id='add', action="/product/add", method="post")
+    label(for='title') Название
+    input#title(placeholder='Название', name = "product_name", type='text')
+    label(for='characteristics') Характеристики    
+    input#characteristics(placeholder='Характеристики', name = "characteristics", type='text')
+    label(for='description') Описание товара
+    input#description(placeholder='Описание', name = "description", type='text')
+    label(for='price') Цена
+    input#price(placeholder='Цена', name = "selling_price", type='number')
+    label(for='picture') URL картинки 
+    input#picture(placeholder='URL', name = "picture", type='text')
+    button(type="submit") Добавить товар

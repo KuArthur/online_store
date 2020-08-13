@@ -1,0 +1,16 @@
+form(id='add', action="/product/edit", method="post")
+    input(type="hidden", value = `${product._id}`, name = 'id')
+    label(for='title') Название
+    input#title(placeholder='Название', name = "product_name", type='text', value=`${product.product_name}`)
+    label(for='characteristics') Характеристики    
+    input#characteristics(placeholder='Характеристики', name = "characteristics", type='text', value=`${product.characteristics}`)
+    label(for='description') Описание товара
+    input#description(placeholder='Описание', name = "description", type='text', value=`${product.description}`)
+    label(for='price') Цена
+    input#price(placeholder='Цена', name = "selling_price", type='number', value=`${product.selling_price}`)
+    label(for='picture') URL картинки 
+    input#picture(placeholder='URL', name = "picture", type='text', value=`${product.picture}`)
+    button(type="submit") Изменить товар
+form(id="delete", action="/product/delete", method="post")
+    input(type="hidden", value = `${product._id}`, name = 'id')
+    button(type="submit") Удалить товар
